@@ -11,3 +11,12 @@ class Question(models.Model):
     is_anonymous = models.BooleanField(default=False)
     def __unicode__(self):
         return self.title
+
+class Answer(models.Model):
+    user_id=models.ForeignKey(User)
+    question_id=models.ForeignKey(Question)
+    answer_text=models.CharField(max_length=500)
+    is_anonymous=models.BooleanField(default=False) 
+    def __unicode__(self):
+        return self.answer_text
+

@@ -9,6 +9,8 @@ urlpatterns = patterns('',
 	url(r'^question/', views.question),
 	url(r'^home/', views.home,name='home' ),
 	url(r'^qaform/', views.display,name='post' ),
+        url(r'^ansform/(?P<ques_id>\d+)/', views.writeans),
+        url(r'^answer/(?P<ques_id>\d+)/', views.answer),
 	
 
 	)

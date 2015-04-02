@@ -1,0 +1,14 @@
+from django import forms
+from QAforum.models import Answer
+
+class PostAnswer(forms.ModelForm):
+    class Meta:
+        model = Answer
+        
+        fields = ['answer_text']
+        widgets = {
+            'answer_text': forms.TextInput(
+                attrs={'id': 'post-text', 'required': True, 'placeholder': 'C\'mon type Something...'}
+            ),
+        }
+
